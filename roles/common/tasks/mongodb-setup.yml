@@ -14,7 +14,7 @@
   when: component == "catalogue"
 
 - name: "get the {{component}} entries count"
-  ansible.builtin.shell:  mongo --host mongodb.roboriya.shop -- quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
+  ansible.builtin.shell:  mongo --host mongodb.roboriya.shop --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
   register: users_count
   when: component == "user"
 
