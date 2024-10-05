@@ -1,8 +1,4 @@
----
-- name: Configuring the web
-  hosts: web
-  become: yes
-  tasks: 
+
   - name: Installing nginx
     ansible.builtin.dnf:
       name: nginx
@@ -31,11 +27,16 @@
       dest: /usr/share/nginx/html
       remote_src: yes
 
-  - name: Copy the roboshop config file
-    ansible.builtin.copy:
-      src: /home/centos/rs_ansible/roboshop.conf
-      dest: /etc/nginx/default.d/roboshop.conf
+  # - name: Copy the roboshop config file
+  #   ansible.builtin.copy:
+  #     src: /home/centos/rs_ansible/roboshop.conf
+  #     dest: /etc/nginx/default.d/roboshop.conf
 
+
+  - name: Copy the roboshop config file
+    ansible.builtin.template:
+      src: roboshop.conf.j2
+      dest: /etc/nginx/default.d/roboshop.conf
   
   # - name: Ensure nginx is enabled
   #   ansible.builtin.service:
