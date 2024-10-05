@@ -8,10 +8,10 @@
       name: common  
       tasks_from: nodejs 
 
-  # - name: mongodb setup
-  #   ansible.builtin.import_role:
-  #   name: common  
-  #   tasks_from: mongodb
+  - name: mongodb setup
+    ansible.builtin.import_role:
+        name: common  
+        tasks_from: mongodb
     
   # - name: systemctl service
   #   ansible.builtin.import_role:
