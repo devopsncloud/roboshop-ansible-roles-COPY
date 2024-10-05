@@ -20,11 +20,11 @@
 
 - name: print the count
   ansible.builtin.debug:
-    msg: "entries count: {{products_count}}" 
+    msg: "product_entries count: {{products_count}}" 
 
 - name: print the count
   ansible.builtin.debug:
-    msg: "entries count: {{users_count}}"
+    msg: "users_entries count: {{users_count}}"
 
 
 
